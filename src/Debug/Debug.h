@@ -1,11 +1,8 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
-#include <chrono>
-
-typedef std::chrono::duration<double> doubleTime;
-typedef std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<long long, std::ratio<1, 1000000000>>> longDuration;
-
+#include <time.h>
+#include <cstring>
 //Remeber memory based sizing on functions and stuff
 
 class Debug {
@@ -13,13 +10,21 @@ class Debug {
     Debug();
     ~Debug();
 
-    doubleTime beginDebug();
+    float beginDebug( void function() );
     double getTime();
-    void booleanTest(bool subjectResult);
+
+    int overflowAdd(int numberA, int numberB);
+    float overflowAdd(float numberA, float numberB);
+    double overflowAdd(double numberA, double numberB);
+    short overflowAdd(short numberA, short numberB);
+    long overflowAdd(long numberA, long numberB);
+
+    size_t sizeOf(char string[]);
   private:
     int time;
-    auto startTimer() -> longDuration;
-    auto endTimer() -> longDuration;
+    auto startTimer() -> clock_t;
+    auto endTimer() -> clock_t;
 };
+
 
 #endif

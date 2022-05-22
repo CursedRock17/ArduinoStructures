@@ -1,12 +1,14 @@
 #include "./Debug.h"
-#include <chrono>
+#include <iostream>
+#include <time.h>
+#include <cstring>
 
-typedef std::chrono::duration<double> doubleTime;
-typedef std::chrono::time_point<std::chrono::steady_clock, std::chrono::duration<long long, std::ratio<1, 1000000000>>> longDuration;
+//#include <Arduino.h>
+
 // -> Constructor and Destructor
 Debug::Debug(){
   getTime();
-  beginDebug();
+  //beginDebug( void function() );
 }
 
 Debug::~Debug(){
@@ -15,16 +17,16 @@ Debug::~Debug(){
 
 // -> Time Based Statements
 
-auto Debug::startTimer() -> longDuration {
-    auto start = std::chrono::steady_clock::now();
-    longDuration startTime = start;
-    return startTime;
+auto Debug::startTimer() -> clock_t {
+    clock_t start;
+    start = clock();
+    return start;
 }
 
-auto Debug::endTimer() -> longDuration {
-    auto end = std::chrono::steady_clock::now();
-    longDuration endTime = end;
-    return endTime;
+auto Debug::endTimer() -> clock_t {
+    clock_t end;
+    end = clock();
+    return end;
 }
 
 double Debug::getTime(){
@@ -34,22 +36,96 @@ double Debug::getTime(){
 }
 
 // -> Main Function Call
-doubleTime Debug::beginDebug(){
+float Debug::beginDebug( void function() ) {
   //Make sure to include space between start and end
-  longDuration start = startTimer();
-  for(int i = 0; i < 5000000; ++i){
+  clock_t start = startTimer();
+  function();
+  clock_t end = endTimer();
+  clock_t timeDifference = end - start;
 
-  }
-  longDuration end = endTimer();
-  doubleTime timeDifference = end - start;
-  return timeDifference;
+  float timeTaken = (float(timeDifference))/CLOCKS_PER_SEC;
+  //Serial.print("It took ", timeTake, " Seconds");
+  return timeTaken;
 }
 
 
 // -> Testing Certain Lines
 
-void Debug::booleanTest(bool subjectResult){
-  if(!subjectResult){
+/*
+Creating Override Functions for float, double, int, long, short formatting
+We can't see beforehand, but if it can't fit in the maxsize then we throw the error in
+the form of -1 and 1;
+*/
 
+int Debug::overflowAdd(int numberA, int numberB){
+  //When checking for overflow the intmax is 2147483647
+
+  int* res = new int[(sizeof(int))];
+  int* result = res;
+  *result = numberA + numberB;
+
+  if(numberA > 0 && numberB > 0 && *result < 0) {
+    //Serial.print(overflow error);
+    return -1;
   }
+  if(numberA < 0 && numberB < 0 && *result > 0) {
+    return -1;
+  }
+
+  int returnAdd = numberA + numberB;
+  return returnAdd;
+}
+
+float Debug::overflowAdd(float numberA, float numberB){
+  float* res = new float[(sizeof(float))];
+  float* result = res;
+  *result = numberA + numberB;
+
+  if(numberA > 0 && numberB > 0 && *result < 0) return -1;
+  if(numberA < 0 && numberB < 0 && *result > 0) return -1;
+
+  float returnAdd = numberA + numberB;
+  return returnAdd;
+}
+
+double Debug::overflowAdd(double numberA, double numberB){
+  double* res = new double[(sizeof(double))];
+  double* result = res;
+  *result = numberA + numberB;
+
+  if(numberA > 0 && numberB > 0 && *result < 0) return -1;
+  if(numberA < 0 && numberB < 0 && *result > 0) return -1;
+
+  double returnAdd = numberA + numberB;
+  return returnAdd;
+}
+
+short Debug::overflowAdd(short numberA, short numberB){
+  short* res = new short[(sizeof(short))];
+  short* result = res;
+  *result = numberA + numberB;
+
+  if(numberA > 0 && numberB > 0 && *result < 0) return -1;
+  if(numberA < 0 && numberB < 0 && *result > 0) return -1;
+
+  short returnAdd = numberA + numberB;
+  return returnAdd;
+}
+
+long Debug::overflowAdd(long numberA, long numberB){
+  long* res = new long[(sizeof(long))];
+  long* result = res;
+  *result = numberA + numberB;
+
+  if(numberA > 0 && numberB > 0 && *result < 0) return -1;
+  if(numberA < 0 && numberB < 0 && *result > 0) return -1;
+
+  long returnAdd = numberA + numberB;
+  return returnAdd;
+}
+
+// -> Checking size of value (types ex: string), size is in bytes
+size_t Debug::sizeOf(char string[]){
+  //Serial.print(strlen(string), " bytes");
+  return strlen(string);
 }
