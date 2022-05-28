@@ -40,6 +40,10 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/cursedrock17/documents/CPP/ArduinoVisualizer/build/src/Debug/cmake_install.cmake")
+  include("/Users/cursedrock17/documents/CPP/ArduinoVisualizer/build/src/Vector/cmake_install.cmake")
+  include("/Users/cursedrock17/documents/CPP/ArduinoVisualizer/build/src/Queue/cmake_install.cmake")
+  include("/Users/cursedrock17/documents/CPP/ArduinoVisualizer/build/src/Stack/cmake_install.cmake")
+  include("/Users/cursedrock17/documents/CPP/ArduinoVisualizer/build/src/LinkedList/cmake_install.cmake")
 
 endif()
 

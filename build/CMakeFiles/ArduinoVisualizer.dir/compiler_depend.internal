@@ -234,4 +234,8 @@ CMakeFiles/ArduinoVisualizer.dir/main.cpp.o
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/bitset
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__bit_reference
  /Users/cursedrock17/documents/CPP/ArduinoVisualizer/src/Debug/Debug.h
+ /Users/cursedrock17/documents/CPP/ArduinoVisualizer/src/Vector/Vector.h
+ /Users/cursedrock17/documents/CPP/ArduinoVisualizer/src/Queue/Queue.h
+ /Users/cursedrock17/documents/CPP/ArduinoVisualizer/src/Stack/Stack.h
+ /Users/cursedrock17/documents/CPP/ArduinoVisualizer/src/LinkedList/LinkedList.h
 

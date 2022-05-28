@@ -12,6 +12,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.23.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.23.1/CMakeSystem.cmake"
   "../src/Debug/CMakeLists.txt"
+  "../src/LinkedList/CMakeLists.txt"
+  "../src/Queue/CMakeLists.txt"
+  "../src/Stack/CMakeLists.txt"
+  "../src/Vector/CMakeLists.txt"
   "/opt/homebrew/Cellar/cmake/3.23.1/share/cmake/Modules/CMakeCInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.23.1/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/opt/homebrew/Cellar/cmake/3.23.1/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
@@ -45,10 +49,18 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/Debug/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/Vector/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/Queue/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/Stack/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/LinkedList/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ArduinoVisualizer.dir/DependInfo.cmake"
   "src/Debug/CMakeFiles/Debug.dir/DependInfo.cmake"
+  "src/Vector/CMakeFiles/Vector.dir/DependInfo.cmake"
+  "src/Queue/CMakeFiles/Queue.dir/DependInfo.cmake"
+  "src/Stack/CMakeFiles/Stack.dir/DependInfo.cmake"
+  "src/LinkedList/CMakeFiles/LinkedList.dir/DependInfo.cmake"
   )

@@ -21,7 +21,6 @@ class Debug {
 
     size_t sizeOf(char string[]);
   private:
-    int time;
     auto startTimer() -> clock_t;
     auto endTimer() -> clock_t;
 };

@@ -142,6 +142,58 @@ Debug/fast:
 	$(MAKE) $(MAKESILENT) -f src/Debug/CMakeFiles/Debug.dir/build.make src/Debug/CMakeFiles/Debug.dir/build
 .PHONY : Debug/fast
 
+#=============================================================================
+# Target rules for targets named Vector
+
+# Build rule for target.
+Vector: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Vector
+.PHONY : Vector
+
+# fast build rule for target.
+Vector/fast:
+	$(MAKE) $(MAKESILENT) -f src/Vector/CMakeFiles/Vector.dir/build.make src/Vector/CMakeFiles/Vector.dir/build
+.PHONY : Vector/fast
+
+#=============================================================================
+# Target rules for targets named Queue
+
+# Build rule for target.
+Queue: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Queue
+.PHONY : Queue
+
+# fast build rule for target.
+Queue/fast:
+	$(MAKE) $(MAKESILENT) -f src/Queue/CMakeFiles/Queue.dir/build.make src/Queue/CMakeFiles/Queue.dir/build
+.PHONY : Queue/fast
+
+#=============================================================================
+# Target rules for targets named Stack
+
+# Build rule for target.
+Stack: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Stack
+.PHONY : Stack
+
+# fast build rule for target.
+Stack/fast:
+	$(MAKE) $(MAKESILENT) -f src/Stack/CMakeFiles/Stack.dir/build.make src/Stack/CMakeFiles/Stack.dir/build
+.PHONY : Stack/fast
+
+#=============================================================================
+# Target rules for targets named LinkedList
+
+# Build rule for target.
+LinkedList: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 LinkedList
+.PHONY : LinkedList
+
+# fast build rule for target.
+LinkedList/fast:
+	$(MAKE) $(MAKESILENT) -f src/LinkedList/CMakeFiles/LinkedList.dir/build.make src/LinkedList/CMakeFiles/LinkedList.dir/build
+.PHONY : LinkedList/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -176,6 +228,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ArduinoVisualizer"
 	@echo "... Debug"
+	@echo "... LinkedList"
+	@echo "... Queue"
+	@echo "... Stack"
+	@echo "... Vector"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

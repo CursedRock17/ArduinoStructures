@@ -6,10 +6,7 @@
 //#include <Arduino.h>
 
 // -> Constructor and Destructor
-Debug::Debug(){
-  getTime();
-  //beginDebug( void function() );
-}
+Debug::Debug(){}
 
 Debug::~Debug(){
 
@@ -65,10 +62,11 @@ int Debug::overflowAdd(int numberA, int numberB){
   *result = numberA + numberB;
 
   if(numberA > 0 && numberB > 0 && *result < 0) {
-    //Serial.print(overflow error);
+    //Serial.print("overflow error");
     return -1;
   }
   if(numberA < 0 && numberB < 0 && *result > 0) {
+    //Serial.print("overflow error");
     return -1;
   }
 
@@ -81,8 +79,14 @@ float Debug::overflowAdd(float numberA, float numberB){
   float* result = res;
   *result = numberA + numberB;
 
-  if(numberA > 0 && numberB > 0 && *result < 0) return -1;
-  if(numberA < 0 && numberB < 0 && *result > 0) return -1;
+  if(numberA > 0 && numberB > 0 && *result < 0) {
+    //Serial.print("overflow error");
+    return -1;
+  }
+  if(numberA < 0 && numberB < 0 && *result > 0) {
+    //Serial.print("overflow error");
+    return -1;
+  }
 
   float returnAdd = numberA + numberB;
   return returnAdd;
@@ -93,8 +97,14 @@ double Debug::overflowAdd(double numberA, double numberB){
   double* result = res;
   *result = numberA + numberB;
 
-  if(numberA > 0 && numberB > 0 && *result < 0) return -1;
-  if(numberA < 0 && numberB < 0 && *result > 0) return -1;
+  if(numberA > 0 && numberB > 0 && *result < 0) {
+    //Serial.print("overflow error");
+    return -1;
+  }
+  if(numberA < 0 && numberB < 0 && *result > 0) {
+    //Serial.print("overflow error");
+    return -1;
+  }
 
   double returnAdd = numberA + numberB;
   return returnAdd;
@@ -105,8 +115,14 @@ short Debug::overflowAdd(short numberA, short numberB){
   short* result = res;
   *result = numberA + numberB;
 
-  if(numberA > 0 && numberB > 0 && *result < 0) return -1;
-  if(numberA < 0 && numberB < 0 && *result > 0) return -1;
+  if(numberA > 0 && numberB > 0 && *result < 0) {
+    //Serial.print("overflow error");
+    return -1;
+  }
+  if(numberA < 0 && numberB < 0 && *result > 0) {
+    //Serial.print("overflow error");
+    return -1;
+  }
 
   short returnAdd = numberA + numberB;
   return returnAdd;
@@ -117,8 +133,14 @@ long Debug::overflowAdd(long numberA, long numberB){
   long* result = res;
   *result = numberA + numberB;
 
-  if(numberA > 0 && numberB > 0 && *result < 0) return -1;
-  if(numberA < 0 && numberB < 0 && *result > 0) return -1;
+  if(numberA > 0 && numberB > 0 && *result < 0) {
+    //Serial.print("overflow error");
+    return -1;
+  }
+  if(numberA < 0 && numberB < 0 && *result > 0) {
+    //Serial.print("overflow error");
+    return -1;
+  }
 
   long returnAdd = numberA + numberB;
   return returnAdd;

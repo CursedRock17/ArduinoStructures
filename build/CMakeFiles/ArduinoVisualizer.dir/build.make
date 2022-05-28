@@ -93,6 +93,10 @@ ArduinoVisualizer_EXTERNAL_OBJECTS =
 ArduinoVisualizer: CMakeFiles/ArduinoVisualizer.dir/main.cpp.o
 ArduinoVisualizer: CMakeFiles/ArduinoVisualizer.dir/build.make
 ArduinoVisualizer: src/Debug/libDebug.a
+ArduinoVisualizer: src/Vector/libVector.a
+ArduinoVisualizer: src/Queue/libQueue.a
+ArduinoVisualizer: src/Stack/libStack.a
+ArduinoVisualizer: src/LinkedList/libLinkedList.a
 ArduinoVisualizer: CMakeFiles/ArduinoVisualizer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/cursedrock17/documents/CPP/ArduinoVisualizer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ArduinoVisualizer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ArduinoVisualizer.dir/link.txt --verbose=$(VERBOSE)
